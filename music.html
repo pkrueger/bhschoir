@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="Keywords" content="BHS, Choir, Music, Singing" />
+    <meta name="Description" content="Archive for BHS Choir Music" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="music/music.css" />
+    <link rel="stylesheet" type="text/css" href="index/index.css" />
+
+    <title>BHS Choir Music</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="music">Page for Music</h1>
+
+        <ul class="navbar">
+            <li class="navbar-button"><a href="index.html" class="navbar-link">Home</a></li>
+            <li class="navbar-button"><a href="#music" class="navbar-link">Music</a></li>
+            <li class="navbar-button"><a href="" class="navbar-link">About</a></li>
+            <li class="navbar-button"><a href="" class="navbar-link">Contact</a></li>
+        </ul>
+    </header>
+
+    <article>
+        <button class="collapsible">Jack Johnson</button>
+        <div class="test">
+        <table class="musictable">
+            <caption id="demo">0</caption>
+            <tr>
+                <td>
+                    <p class="songtitles">Subplots</p>
+                    <audio controls>
+                        <source src="music/allthelightaboveittoo/01subplots.mp3" type="audio/mpeg" />
+                    </audio>
+                </td>
+                <td>
+                    <p class="songtitles">You Can't Control It</p>
+                    <audio controls>
+                        <source src="music/allthelightaboveittoo/02youcantcontrolit.mp3" type="audio/mpeg" />
+                    </audio>
+                </td>
+                <td>
+                    <p class="songtitles">Sunsets For Somebody Else</p>
+                    <audio controls>
+                        <source src="music/allthelightaboveittoo/03sunsetsforsomebodyelse.mp3" type="audio/mpeg" />
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="songtitles">My Mind Is For Sale</p>
+                    <audio controls>
+                        <source src="music/allthelightaboveittoo/04mymindisforsale.mp3" type="audio/mpeg" />
+                    </audio>
+                </td>
+                <td>
+                    <p class="songtitles">Daybreaks</p>
+                    <audio controls>
+                        <source src="music/allthelightaboveittoo/05daybreaks.mp3" type="audio/mpeg" />
+                    </audio>
+                </td>
+                <td>
+                    <p class="songtitles">Big Sur</p>
+                    <audio controls>
+                        <source src="music/allthelightaboveittoo/06bigsur.mp3" type="audio/mpeg" />
+                    </audio>
+                </td>
+            </tr>
+        </table>
+        </div>
+    </article>
+
+    <footer>
+        <p><em>Footer and about stuff goes down here.</em></p>
+    </footer>
+
+    <script>
+        var coll =
+            document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var musictable = this.nextElementSibling;
+                if (musictable.style.maxHeight) {
+                    musictable.style.maxHeight = null;
+                } else {
+                    musictable.style.maxHeight = musictable.scrollHeight + "px";
+                }
+            });
+        }
+        
+        /*trying to make the max-height dynamic*/
+        var test = document.getElementsByClassName("test")
+        function getMaxHeight() {
+            var txt = window.innerWidth;
+            if (txt < 951) {
+                document.getElementById("demo").innerHTML = txt; //temporary to see if the if statement is true
+                test.style.maxHeight = test.scrollHeight + "px";
+            } else {
+                test.style.maxHeight = null;
+            }
+        }
+        
+        window.addEventListener("resize", getMaxHeight);
+        
+    </script>
+
+</body>
+
+</html>
